@@ -7,7 +7,7 @@ describe("API_AUTOMATION", () => {
     const res = await request(`${testData.hostName}`).get(
       `${testData.path}` + `${testData.queryString}`
     );
-    //console.log(res._body)
+    console.log(res._body)
 
     expect(res.statusCode).toEqual(200);
 
@@ -29,7 +29,7 @@ describe("API_AUTOMATION", () => {
         name: "rohith",
         job: "SDET",
       });
-    // console.log(res._body)
+    console.log(res._body)
     expect(res.statusCode).toEqual(201);
     expect(res._body.name).toBe("rohith");
     expect(res._body.job).toBe("SDET");
@@ -47,7 +47,7 @@ describe("API_AUTOMATION", () => {
         name: "Rohith Dornala",
         job: "SDET 1",
       });
-    //console.log(res._body)
+    console.log(res._body)
     expect(res.statusCode).toEqual(200);
     expect(res._body.name).not.toBe("rohith");
     expect(res._body.job).not.toBe("SDET");
@@ -62,7 +62,7 @@ describe("API_AUTOMATION", () => {
         job: "SDET 1",
       });
 
-    //console.log(res._body)
+   console.log(res._body)
     await expect(res.statusCode).toEqual(200);
     expect(res._body.name).toBe("ROHITH DORNALA");
     expect(res._body.job).not.toBe("SDET");
